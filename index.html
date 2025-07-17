@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIRA - Presentación</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0B0F1E;
+            color: #E0E0E0;
+        }
+        .slide {
+            display: none;
+            min-height: 80vh;
+        }
+        .slide.active {
+            display: flex;
+        }
+        .gradient-bg {
+            background-image: linear-gradient(145deg, #0B0F1E, #303958);
+        }
+        .glow-accent {
+            box-shadow: 0 0 35px 5px rgba(91, 228, 232, 0.3);
+        }
+        .btn-nav {
+            background-color: rgba(91, 228, 232, 0.1);
+            border: 1px solid rgba(91, 228, 232, 0.5);
+            transition: all 0.3s ease;
+        }
+        .btn-nav:hover {
+            background-color: rgba(91, 228, 232, 0.3);
+            transform: translateY(-2px);
+        }
+        .btn-nav:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .progress-bar-fill {
+            background-color: #5BE4E8;
+            transition: width 0.3s ease-in-out;
+        }
+        .icon-accent {
+            color: #5BE4E8;
+        }
+        /* Custom animation for fade-in */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .active {
+            animation: fadeIn 0.6s ease-in-out;
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen p-4">
+
+    <div id="presentation-container" class="w-full max-w-5xl bg-[#101424] rounded-2xl shadow-2xl overflow-hidden border border-gray-700">
+        <main id="slides-wrapper" class="p-6 sm:p-10 md:p-16">
+            <!-- Slide 1: Title -->
+            <div id="slide-1" class="slide active flex-col items-center justify-center text-center gradient-bg rounded-lg">
+                <div class="relative w-48 h-48 sm:w-64 sm:h-64 mb-4 rounded-full bg-black flex items-center justify-center glow-accent">
+                    <img src="mira.png" alt="Logo de MIRA" class="w-[95%] h-[95%] object-cover rounded-full">
+                </div>
+                <h1 class="text-5xl sm:text-7xl font-black tracking-tighter text-white">MIRA</h1>
+                <p class="text-2xl font-bold mt-2 text-white">by <span class="bg-gradient-to-r from-blue-400 to-purple-400 text-transparent bg-clip-text font-bold">MyThoughtsEC</span></p>
+                <p class="text-lg sm:text-xl text-gray-300 mt-4">My Ideas & Reflections Assistant</p>
+                <p class="text-xl sm:text-2xl font-bold mt-6 text-white px-4 py-2 rounded-md" style="color: #5BE4E8;">
+                    «Transforma ideas en acción, al instante.»
+                </p>
+            </div>
+
+            <!-- Slide 2: ¿Qué es MIRA? -->
+            <div id="slide-2" class="slide flex-col lg:flex-row items-center justify-center gap-10">
+                <div class="lg:w-1/2 space-y-6">
+                    <h2 class="text-4xl font-bold text-white">¿Qué es <span class="icon-accent">MIRA</span>?</h2>
+                    <ul class="space-y-4 text-lg text-gray-300 list-inside">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 mr-3 mt-1 icon-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M12 6V3m0 18v-3"></path></svg>
+                            <span>Chat inteligente potenciado por la IA base de MyThoughtsEC.</span>
+                        </li>
+                        <li class="flex items-start">
+                             <svg class="w-6 h-6 mr-3 mt-1 icon-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            <span>Se conecta al ADN de tu organización para escuchar, organizar y actuar sobre datos empresariales.</span>
+                        </li>
+                        <li class="flex items-start">
+                             <svg class="w-6 h-6 mr-3 mt-1 icon-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            <span>Funciona dentro de tu flujo diario, sin fricción.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="lg:w-1/2 w-full mt-8 lg:mt-0">
+                    <div class="bg-[#1a2035] rounded-xl p-4 shadow-lg border border-gray-700">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full mr-3 bg-black flex items-center justify-center flex-shrink-0">
+                                <img src="mira.png" alt="Avatar de MIRA" class="w-[90%] h-[90%] object-cover rounded-full">
+                            </div>
+                            <div>
+                                <p class="font-bold text-white">MIRA</p>
+                                <p class="text-sm text-green-400">Online</p>
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex justify-end">
+                                <p class="bg-[#303958] text-white p-3 rounded-lg max-w-xs">¿Cómo van las ventas del Q1?</p>
+                            </div>
+                            <div class="flex justify-start">
+                                <p class="bg-[#5BE4E8] bg-opacity-20 text-white p-3 rounded-lg max-w-xs">Las ventas del Q1 alcanzaron $1.2M, un 15% por encima del objetivo. El producto estrella fue "QuantumLeap" con un 40% de participación. ¿Quieres un desglose por región?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Capacidades Clave -->
+            <div id="slide-3" class="slide flex-col items-center justify-center">
+                <h2 class="text-4xl font-bold text-white text-center mb-12">Capacidades <span class="icon-accent">Clave</span></h2>
+                <div class="grid md:grid-cols-2 gap-8 w-full">
+                    <div class="bg-[#1a2035] p-6 rounded-lg border border-gray-700">
+                        <svg class="w-10 h-10 mb-4 icon-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4M4 7s0 0 0 0M12 15v6M12 3v6"></path></svg>
+                        <h3 class="text-xl font-bold text-white mb-2">Acceso Universal a Datos</h3>
+                        <p class="text-gray-400">Conexión a todas tus fuentes de datos: finanzas, inventario, RR. HH., y más.</p>
+                    </div>
+                    <div class="bg-[#1a2035] p-6 rounded-lg border border-gray-700">
+                        <svg class="w-10 h-10 mb-4 icon-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        <h3 class="text-xl font-bold text-white mb-2">Generación Instantánea</h3>
+                        <p class="text-gray-400">Crea documentos (Excel, PDF, PPT) directamente desde el chat.</p>
+                    </div>
+                    <div class="bg-[#1a2035] p-6 rounded-lg border border-gray-700">
+                        <svg class="w-10 h-10 mb-4 icon-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path></svg>
+                        <h3 class="text-xl font-bold text-white mb-2">Múltiples Conversaciones</h3>
+                        <p class="text-gray-400">Paraleliza tareas y mantén el contexto con múltiples ventanas de chat.</p>
+                    </div>
+                    <div class="bg-[#1a2035] p-6 rounded-lg border border-gray-700">
+                        <svg class="w-10 h-10 mb-4 icon-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                        <h3 class="text-xl font-bold text-white mb-2">Memoria por Usuario</h3>
+                        <p class="text-gray-400">MIRA recuerda tu contexto, preferencias y estilo de trabajo.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Permisos & Roles -->
+            <div id="slide-4" class="slide flex-col items-center justify-center">
+                <h2 class="text-4xl font-bold text-white text-center mb-4">Gestión de Permisos & Roles</h2>
+                <p class="text-lg text-gray-400 text-center mb-12 max-w-3xl">MIRA respeta la jerarquía de la empresa, garantizando que los datos sensibles permanezcan seguros y auditados.</p>
+                <div class="w-full max-w-4xl bg-[#1a2035] p-8 rounded-lg border border-gray-700 flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-8">
+                    <div class="text-center">
+                        <div class="bg-blue-500/20 text-blue-300 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 border-2 border-blue-400">
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white">1. Solicitud</h3>
+                        <p class="text-gray-400">Usuario solicita info sin permisos.</p>
+                    </div>
+                    <div class="text-5xl text-gray-600 hidden md:block">→</div>
+                     <div class="text-5xl text-gray-600 md:hidden">↓</div>
+                    <div class="text-center">
+                        <div class="bg-yellow-500/20 text-yellow-300 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 border-2 border-yellow-400">
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white">2. Notificación</h3>
+                        <p class="text-gray-400">Chat envía notificación al supervisor.</p>
+                    </div>
+                     <div class="text-5xl text-gray-600 hidden md:block">→</div>
+                     <div class="text-5xl text-gray-600 md:hidden">↓</div>
+                    <div class="text-center">
+                        <div class="bg-green-500/20 text-green-300 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 border-2 border-green-400">
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white">3. Decisión</h3>
+                        <p class="text-gray-400">Supervisor aprueba o rechaza con un clic.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5: MVP v1.0 -->
+            <div id="slide-5" class="slide flex-col items-center justify-center">
+                <div class="text-center">
+                    <h2 class="text-4xl font-bold text-white">MVP v1.0</h2>
+                    <p class="text-xl text-gray-400 mt-2 mb-10">Enfoque Inicial</p>
+                </div>
+                <div class="w-full max-w-md space-y-6">
+                    <div class="bg-[#1a2035] p-6 rounded-lg border-2 border-[#5BE4E8] shadow-lg flex items-center space-x-4">
+                        <div class="bg-[#5BE4E8] p-3 rounded-full">
+                           <svg class="w-6 h-6 text-[#101424]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-white">Generación de Documentos</h3>
+                            <p class="text-gray-400">Reportes y dashboards basados en datos.</p>
+                        </div>
+                    </div>
+                    <div class="bg-[#1a2035] p-6 rounded-lg border-2 border-[#5BE4E8] shadow-lg flex items-center space-x-4">
+                        <div class="bg-[#5BE4E8] p-3 rounded-full">
+                            <svg class="w-6 h-6 text-[#101424]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-white">Flujo de Permisos Seguro</h3>
+                            <p class="text-gray-400">Acceso seguro y auditado integrado en el chat.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 6: Flujo Ejemplo -->
+            <div id="slide-6" class="slide flex-col items-center justify-center">
+                 <h2 class="text-4xl font-bold text-white text-center mb-12">Flujo de <span class="icon-accent">Ejemplo</span></h2>
+                 <div class="w-full max-w-2xl space-y-4">
+                    <div class="flex items-start p-4 bg-[#1a2035] rounded-lg border border-gray-700">
+                        <div class="icon-accent mr-4 mt-1">1.</div>
+                        <p class="text-gray-300"><b class="text-white">Usuario:</b> «Dame análisis de ventas del producto X (feb → mar) y explica la caída.»</p>
+                    </div>
+                    <div class="flex items-start p-4 bg-[#1a2035] rounded-lg border border-gray-700">
+                        <div class="icon-accent mr-4 mt-1">2.</div>
+                        <p class="text-gray-300"><b class="text-white">MIRA:</b> Detecta falta de privilegio y solicita acceso al supervisor.</p>
+                    </div>
+                    <div class="flex items-start p-4 bg-[#1a2035] rounded-lg border border-gray-700">
+                        <div class="icon-accent mr-4 mt-1">3.</div>
+                        <p class="text-gray-300"><b class="text-white">Supervisor:</b> Aprueba el acceso por 24 horas con un solo clic.</p>
+                    </div>
+                    <div class="flex items-start p-4 bg-[#1a2035] rounded-lg border border-gray-700">
+                        <div class="icon-accent mr-4 mt-1">4.</div>
+                        <p class="text-gray-300"><b class="text-white">MIRA:</b> Entrega un Excel detallado y un resumen explicando la causa de la caída.</p>
+                    </div>
+                 </div>
+            </div>
+
+            <!-- Slide 7: Despliegue -->
+            <div id="slide-7" class="slide flex-col items-center justify-center">
+                <h2 class="text-4xl font-bold text-white text-center mb-12">Arquitectura y <span class="icon-accent">Despliegue</span></h2>
+                <div class="w-full max-w-4xl text-center">
+                    <div class="bg-[#1a2035] p-8 rounded-lg border border-gray-700">
+                        <p class="text-lg text-gray-300 mb-8">Instalación directa junto a los servicios API del proveedor. Si el cliente no tiene un sistema, se desarrollará una solución a la medida desde cero con MyThoughtsEC para asegurar las máximas capacidades. El despliegue es un contenedor único con actualizaciones automáticas para un mantenimiento mínimo.</p>
+                        <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4 text-white">
+                            <div class="p-4 bg-[#303958] rounded-lg w-48 text-center">Cliente / Usuario</div>
+                            <div class="text-2xl icon-accent">↔</div>
+                            <div class="p-4 bg-[#5BE4E8] text-[#0B0F1E] rounded-lg w-48 text-center font-bold">Contenedor MIRA</div>
+                            <div class="text-2xl icon-accent">↔</div>
+                            <div class="p-4 bg-[#303958] rounded-lg w-48 text-center">APIs / Base de Datos</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 8: Propuesta de Valor -->
+            <div id="slide-8" class="slide flex-col items-center justify-center">
+                 <h2 class="text-4xl font-bold text-white text-center mb-12">Propuesta de <span class="icon-accent">Valor</span></h2>
+                 <div class="grid md:grid-cols-2 gap-6 w-full max-w-4xl">
+                    <div class="flex items-center bg-[#1a2035] p-4 rounded-lg border border-gray-700"><svg class="w-8 h-8 mr-4 icon-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg><div><h3 class="text-lg font-semibold text-white">Velocidad</h3><p class="text-gray-400">Respuestas y documentos en segundos.</p></div></div>
+                    <div class="flex items-center bg-[#1a2035] p-4 rounded-lg border border-gray-700"><svg class="w-8 h-8 mr-4 icon-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg><div><h3 class="text-lg font-semibold text-white">Eficiencia</h3><p class="text-gray-400">Menos pasos, menos carga operativa.</p></div></div>
+                    <div class="flex items-center bg-[#1a2035] p-4 rounded-lg border border-gray-700"><svg class="w-8 h-8 mr-4 icon-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg><div><h3 class="text-lg font-semibold text-white">Gobernanza de Datos</h3><p class="text-gray-400">Roles, auditoría y cumplimiento normativo.</p></div></div>
+                    <div class="flex items-center bg-[#1a2035] p-4 rounded-lg border border-gray-700"><svg class="w-8 h-8 mr-4 icon-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11l5-5m0 0l5 5m-5-5v12"></path></svg><div><h3 class="text-lg font-semibold text-white">Escalabilidad</h3><p class="text-gray-400">Se adapta al tamaño y procesos de cada negocio.</p></div></div>
+                 </div>
+            </div>
+
+            <!-- Slide 9: Roadmap -->
+            <div id="slide-9" class="slide flex-col items-center justify-center">
+                <h2 class="text-4xl font-bold text-white text-center mb-12">Roadmap <span class="icon-accent">Futuro</span></h2>
+                <div class="w-full max-w-3xl relative">
+                    <!-- Vertical line -->
+                    <div class="absolute left-4 sm:left-1/2 top-0 h-full w-0.5 bg-gray-700" style="transform: translateX(-50%);"></div>
+                    <!-- Items -->
+                    <div class="space-y-12">
+                        <div class="flex items-center w-full">
+                            <div class="hidden sm:block w-1/2"></div>
+                            <div class="hidden sm:block z-10 w-5 h-5 rounded-full bg-[#5BE4E8]"></div>
+                            <div class="w-full sm:w-1/2 sm:pl-8">
+                                <div class="bg-[#1a2035] p-4 rounded-lg border border-gray-700">
+                                    <p class="text-gray-400 mb-1 text-sm">Fase 1</p>
+                                    <h3 class="text-white font-bold">Fine-tuning Empresarial</h3>
+                                    <p class="text-gray-400">Insights cada vez más precisos y adaptados al negocio.</p>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="flex items-center w-full">
+                            <div class="w-full sm:w-1/2 sm:pr-8 sm:text-right">
+                                <div class="bg-[#1a2035] p-4 rounded-lg border border-gray-700">
+                                    <p class="text-gray-400 mb-1 text-sm">Fase 2</p>
+                                    <h3 class="text-white font-bold">Modelos Verticales</h3>
+                                    <p class="text-gray-400">Módulos especializados: finanzas, logística, ventas.</p>
+                                </div>
+                            </div>
+                            <div class="hidden sm:block z-10 w-5 h-5 rounded-full bg-[#5BE4E8]"></div>
+                            <div class="hidden sm:block w-1/2"></div>
+                        </div>
+                         <div class="flex items-center w-full">
+                            <div class="hidden sm:block w-1/2"></div>
+                            <div class="hidden sm:block z-10 w-5 h-5 rounded-full bg-[#5BE4E8]"></div>
+                            <div class="w-full sm:w-1/2 sm:pl-8">
+                                <div class="bg-[#1a2035] p-4 rounded-lg border border-gray-700">
+                                    <p class="text-gray-400 mb-1 text-sm">Fase 3</p>
+                                    <h3 class="text-white font-bold">Expansión y Predicción</h3>
+                                    <p class="text-gray-400">Integración con más fuentes y métricas predictivas.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 10: Próximos Pasos -->
+            <div id="slide-10" class="slide flex-col items-center justify-center text-center">
+                <h2 class="text-4xl font-bold text-white mb-8">Próximos <span class="icon-accent">Pasos</span></h2>
+                <div class="grid md:grid-cols-2 gap-8 w-full max-w-4xl">
+                    <div class="bg-[#1a2035] p-8 rounded-lg border border-gray-700 space-y-4">
+                        <h3 class="text-2xl font-bold text-white">Acciones Inmediatas</h3>
+                        <ul class="text-left text-gray-300 space-y-2 list-disc list-inside">
+                            <li>Lanzamiento del <i lang="en">early access</i> a finales de octubre.</li>
+                            <li>Demo en Figma (wireframes + prototipo).</li>
+                            <li>Piloto con datos reales de cliente <i lang="en">early-adopter</i>.</li>
+                            <li>Recopilación de feedback para iterar a v1.1.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-[#1a2035] p-8 rounded-lg border border-gray-700 flex flex-col items-center justify-center">
+                        <h3 class="text-2xl font-bold text-white mb-4">Contáctanos</h3>
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://mythoughtec.com/" alt="Código QR para la demo" class="rounded-lg mb-4">
+                        <a href="https://mythoughtec.com/" target="_blank" class="text-[#5BE4E8] hover:underline">mythoughtec.com</a>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        
+        <!-- Navigation -->
+        <footer class="p-4 bg-[#0B0F1E] border-t border-gray-700">
+            <div class="w-full bg-gray-700 rounded-full h-1.5 mb-4">
+                <div id="progress-bar" class="progress-bar-fill h-1.5 rounded-full"></div>
+            </div>
+            <div class="flex justify-between items-center">
+                <button id="prev-btn" class="btn-nav text-white font-bold py-2 px-4 rounded-lg flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    Anterior
+                </button>
+                <span id="slide-counter" class="text-sm text-gray-400"></span>
+                <button id="next-btn" class="btn-nav text-white font-bold py-2 px-4 rounded-lg flex items-center">
+                    Siguiente
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const slideCounter = document.getElementById('slide-counter');
+            const progressBar = document.getElementById('progress-bar');
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.remove('active');
+                    if (i === index) {
+                        slide.classList.add('active');
+                    }
+                });
+                updateControls();
+            }
+
+            function updateControls() {
+                // Update counter
+                slideCounter.textContent = `Diapositiva ${currentSlide + 1} de ${totalSlides}`;
+                
+                // Update progress bar
+                const progressPercentage = ((currentSlide + 1) / totalSlides) * 100;
+                progressBar.style.width = `${progressPercentage}%`;
+
+                // Update buttons
+                prevBtn.disabled = currentSlide === 0;
+                nextBtn.disabled = currentSlide === totalSlides - 1;
+            }
+
+            nextBtn.addEventListener('click', () => {
+                if (currentSlide < totalSlides - 1) {
+                    currentSlide++;
+                    showSlide(currentSlide);
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    showSlide(currentSlide);
+                }
+            });
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') {
+                    nextBtn.click();
+                } else if (e.key === 'ArrowLeft') {
+                    prevBtn.click();
+                }
+            });
+
+            // Initial setup
+            showSlide(currentSlide);
+        });
+    </script>
+</body>
+</html>
